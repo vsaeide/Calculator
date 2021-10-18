@@ -11,12 +11,10 @@ def multiply(x, y):
 
 
 def divide(x, y):
-    return x / y
-
-def power(x, y):
-    return x ** y
-
-
+    if y:
+        return x / y
+    else:
+        return ZeroDivisionError
 
 #############################################################################################3
 
@@ -25,7 +23,6 @@ print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide")
-print("5.Power")
 
 
 ##############################################################################################3
@@ -33,7 +30,7 @@ while True:
 
     choice = int(input("\nEnter your choice number: "))
 
-    if choice in range(1, 6):
+    if choice in range(1, 5):
         num1 = float(input("Enter first number: "))
         num2 = float(input("Enter second number: "))
 
@@ -46,9 +43,11 @@ while True:
         elif choice == 3:
             print(num1, "*", num2, "=", multiply(num1, num2))
         elif choice == 4:
-            print(num1, "/", num2, "=", divide(num1, num2))
-        elif choice == 5:
-            print(num1, "**", num2, "=", power(num1, num2))
+            result = divide(num1, num2)
+            if result == ZeroDivisionError:
+                print("**** Zero Division Error! ****")
+            else:
+                print(num1, "/", num2, "=", result)
 
         next_calculation = input("Let's do next calculation? (y/n): ")
         if next_calculation == "n":
