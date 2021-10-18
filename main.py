@@ -31,7 +31,10 @@ def log(x, y):
 
 
 def square(x):
-    return math.sqrt(x)
+    if x >= 0:
+        return math.sqrt(x)
+    else:
+        return ValueError
 
 
 #############################################################################################3
@@ -82,7 +85,11 @@ while True:
             num = float(input("Enter the number: "))
             if choice == 7:
                 result = square(num)
-                print("The square of ", num, " is ", result)
+
+                if result == ValueError:
+                    print("Invalid Input")
+                else:
+                    print("The square of ", num, " is ", result)
 
         next_calculation = input("Let's do next calculation? (y/n): ")
         if next_calculation == "n":
