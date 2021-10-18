@@ -34,6 +34,10 @@ def square(x):
     return math.sqrt(x)
 
 
+def sin(x):
+    return math.sin(x)  # in radian
+
+
 #############################################################################################3
 
 print("Select operation.")
@@ -44,13 +48,14 @@ print("4.Divide")
 print("5.Power")
 print("6.Log")
 print("7.Square")
+print("8.Sin")
 
 ##############################################################################################3
 while True:
 
     choice = int(input("\nEnter your choice number: "))
 
-    if choice in range(1, 8):
+    if choice in range(1, 9):
         if choice in range(1, 7):
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
@@ -83,6 +88,8 @@ while True:
             if choice == 7:
                 result = square(num)
                 print("The square of ", num, " is ", result)
+            elif choice == 8:
+                print("Sin(", num, ") = ", sin(num))
 
         next_calculation = input("Let's do next calculation? (y/n): ")
         if next_calculation == "n":
