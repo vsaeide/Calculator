@@ -16,6 +16,10 @@ def divide(x, y):
     else:
         return ZeroDivisionError
 
+
+def power(x, y):
+    return x ** y
+
 #############################################################################################3
 
 print("Select operation.")
@@ -23,6 +27,8 @@ print("1.Add")
 print("2.Subtract")
 print("3.Multiply")
 print("4.Divide")
+print("5.Power")
+
 
 
 ##############################################################################################3
@@ -48,6 +54,8 @@ while True:
                 print("**** Zero Division Error! ****")
             else:
                 print(num1, "/", num2, "=", result)
+        elif choice == 5:
+            print(num1, "**", num2, "=", power(num1, num2))
 
         next_calculation = input("Let's do next calculation? (y/n): ")
         if next_calculation == "n":
