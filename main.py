@@ -11,8 +11,10 @@ def multiply(x, y):
 
 
 def divide(x, y):
-    return x / y
-
+    if y:
+        return x / y
+    else:
+        return ZeroDivisionError
 
 #############################################################################################3
 
@@ -41,7 +43,11 @@ while True:
         elif choice == 3:
             print(num1, "*", num2, "=", multiply(num1, num2))
         elif choice == 4:
-            print(num1, "/", num2, "=", divide(num1, num2))
+            result = divide(num1, num2)
+            if result == ZeroDivisionError:
+                print("**** Zero Division Error! ****")
+            else:
+                print(num1, "/", num2, "=", result)
 
         next_calculation = input("Let's do next calculation? (y/n): ")
         if next_calculation == "n":
