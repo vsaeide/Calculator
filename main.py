@@ -25,7 +25,9 @@ def power(x, y):
 
 
 def log(x, y):
-    return math.log(x, y)
+    if x > 0 and y > 0 and y != 1:
+        return math.log(x, y)
+    return ValueError
 
 
 def square(x):
@@ -72,7 +74,10 @@ while True:
                 print(num1, "**", num2, "=", power(num1, num2))
             elif choice == 6:
                 result = log(num1, num2)
-                print("The logarithm of ", num1, " with base ", num2, " is ", result)
+                if result == ValueError:
+                    print("Invalid Input")
+                else:
+                    print("The logarithm of ", num1, " with base ", num2, " is ",result )
         else:
             num = float(input("Enter the number: "))
             if choice == 7:
